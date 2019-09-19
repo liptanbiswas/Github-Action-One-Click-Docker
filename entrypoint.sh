@@ -49,9 +49,9 @@ then
   sh -c "docker push $REGISTRY_IMAGE:$DOCKER_IMAGE_TAG"
 else
   sh -c "docker tag $IMAGE_NAME $REGISTRY_IMAGE:$IMAGE_TAG"
-  sh -c "docker tag $IMAGE_NAME $REGISTRY_IMAGE:${GITHUB_SHA:0:7}"
+#  sh -c "docker tag $IMAGE_NAME $REGISTRY_IMAGE:${GITHUB_SHA:0:7}"
   sh -c "docker tag $IMAGE_NAME $REGISTRY_IMAGE:latest"
   sh -c "docker push $REGISTRY_IMAGE:$IMAGE_TAG"
-  sh -c "docker push $REGISTRY_IMAGE:${GITHUB_SHA:0:7}"
+#  sh -c "docker push $REGISTRY_IMAGE:${GITHUB_SHA:0:7}"
   sh -c "docker push $REGISTRY_IMAGE:latest"
 fi
